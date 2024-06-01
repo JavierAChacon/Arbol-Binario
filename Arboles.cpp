@@ -35,8 +35,8 @@ void Arboles::insertarNodo(Nodo *&arbol, char *palabra){
 }
 
 void Arboles::mostrarArbol(Nodo *arbol, int contador){
-	if(arbol == NULL){
-		cout << "El arbol está vacío";
+	if (arbol == NULL) {
+		return;
 	} else {
 		mostrarArbol(arbol -> derecha, contador+1);
 		for(int i = 0; i < contador; i++){
@@ -45,6 +45,39 @@ void Arboles::mostrarArbol(Nodo *arbol, int contador){
 		cout << arbol -> palabra << endl;
 		mostrarArbol(arbol -> izquierda, contador+1);
 		
+	}
+}
+
+int Arboles::calcularAlturaArbol(Nodo *arbol){
+	if(arbol->izquierda == NULL && arbol->derecha == NULL){
+		return 1;
+	} else {
+		int alturaIzquierda = -1, alturaDerecha = -1;
+		if(arbol->izquierda != NULL){
+			alturaIzquierda = calcularAlturaArbol(arbol->izquierda);
+		}
+		if(arbol->derecha != NULL){
+			alturaDerecha = calcularAlturaArbol(arbol->derecha);
+		}
+		if(alturaIzquierda > alturaDerecha){
+			return alturaIzquierda+1;
+		}else{
+			return alturaDerecha+1;
+		}
+	}
+}
+
+void Arboles::imprimirHojasArbol(Nodo *arbol, vector<char*> &hojas){
+	if(arbol->izquierda == NULL && arbol->derecha == NULL){
+		hojas.push_back(arbol->palabra);
+		return;
+	} else {
+		if(arbol->derecha != NULL){
+			imprimirHojasArbol(arbol->derecha, hojas);		
+		}
+		if(arbol->izquierda != NULL){
+			imprimirHojasArbol(arbol->izquierda, hojas);	
+		}
 	}
 }
 
