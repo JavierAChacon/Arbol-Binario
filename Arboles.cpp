@@ -82,7 +82,7 @@ void Arboles::imprimirHojasArbol(Nodo *arbol, vector<char*> &hojas){
 }
 
 int Arboles::calcularEquilibrioArbol(Nodo *arbol){
-	int alturaIzq = 1, alturaDer = 1;
+	int alturaIzq = 0, alturaDer = 0;
 	if(arbol->izquierda == NULL && arbol->derecha == NULL){
 		return 1;
 	} else {
