@@ -37,7 +37,7 @@ int main () {
 		} else if (opcion == 3) {
 			arbolesBinariosDeBusqueda.imprimirHojasArboles();
 		} else if (opcion == 4) {
-			
+			arbolesBinariosDeBusqueda.imprimirEquilibrioArboles();
 		}
 		
 	} while (opcion != 5);

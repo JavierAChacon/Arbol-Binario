@@ -18,6 +18,7 @@ class Archivos
 	void imprimirArboles();
 	void imprimirAlturaArboles();
 	void imprimirHojasArboles();
+	void imprimirEquilibrioArboles();
 };
 
 #endif

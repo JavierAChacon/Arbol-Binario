@@ -25,6 +25,7 @@ class Arboles
 	void mostrarArbol(Nodo *arbol, int contador);
 	int calcularAlturaArbol(Nodo *arbol);
 	void imprimirHojasArbol(Nodo *arbol, vector<char*> &hojas);
+	int calcularEquilibrioArbol(Nodo *arbol);
 };
 
 #endif

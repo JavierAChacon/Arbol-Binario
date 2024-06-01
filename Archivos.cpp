@@ -59,3 +59,15 @@ void Archivos::imprimirHojasArboles(){
     }
     system("pause");
 }
+
+void Archivos::imprimirEquilibrioArboles(){
+	system("cls");
+	for (size_t i = 0; i < arboles.size(); ++i) {
+		if (arboles[i].calcularEquilibrioArbol(arboles[i].arbol) >= -1 && arboles[i].calcularEquilibrioArbol(arboles[i].arbol) <= 1){
+			cout << "Arbol " << i+1 <<": Esta en equilibrio\n\n";
+		} else {
+			cout << "Arbol " << i+1 <<": No esta en equilibrio\n\n";
+		}
+    }
+    system("pause");
+}
