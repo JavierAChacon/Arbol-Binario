@@ -30,6 +30,15 @@ int main () {
 			}
 		} while (opcion < 0 || opcion > 5);	
 		
+		if (opcion == 1 ){
+			arbolesBinariosDeBusqueda.imprimirArboles();
+		} else if (opcion == 2) {
+			arbolesBinariosDeBusqueda.imprimirAlturaArboles();
+		} else if (opcion == 3) {
+			arbolesBinariosDeBusqueda.imprimirHojasArboles();
+		} else if (opcion == 4) {
+			arbolesBinariosDeBusqueda.imprimirEquilibrioArboles();
+		}
 		
 	} while (opcion != 5);
 }
