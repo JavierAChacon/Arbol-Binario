@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o Arboles.o Archivos.o
-LINKOBJ  = main.o Arboles.o Archivos.o
+OBJ      = main.o Arbol.o Archivo.o
+LINKOBJ  = main.o Arbol.o Archivo.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -27,8 +27,8 @@ $(BIN): $(OBJ)
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
 
-Arboles.o: Arboles.cpp
-	$(CPP) -c Arboles.cpp -o Arboles.o $(CXXFLAGS)
+Arbol.o: Arbol.cpp
+	$(CPP) -c Arbol.cpp -o Arbol.o $(CXXFLAGS)
 
-Archivos.o: Archivos.cpp
-	$(CPP) -c Archivos.cpp -o Archivos.o $(CXXFLAGS)
+Archivo.o: Archivo.cpp
+	$(CPP) -c Archivo.cpp -o Archivo.o $(CXXFLAGS)

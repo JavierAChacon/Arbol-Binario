@@ -1,19 +1,19 @@
 #ifndef ARCHIVOS_H
 #define ARCHIVOS_H
-#include "Arboles.h"
-#include <stdlib.h>
-#include <cstring>
-#include <string.h>
+
+#include "Arbol.h"
+
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <cstdio>
+
 using namespace std;
 
-class Archivos
+class Archivo
 {
-	public:
-	vector<Arboles> arboles;	
+	protected:
+	vector<Arbol> arboles;
+	public:	
 	void leerArchivo();
 	void imprimirArboles();
 	void imprimirAlturaArboles();

@@ -1,49 +1,72 @@
 #include <iostream>
 #include <cctype>
-#include "Archivos.h"
+#include <fstream>
+#include "Archivo.h"
 
 using namespace std;
 
-void titulo(char *titulo);
+void imprimirEncabezado(char* dirArchivo);
 
-int main () {
-	int opcion;
-	Archivos arbolesBinariosDeBusqueda;
+int main () 
+{
+	int opcionMenu;
+	Archivo arbolesBinariosDeBusqueda;
 	arbolesBinariosDeBusqueda.leerArchivo();
-	do {
-		do {
-			titulo("MENU");
-			cout << "1. Imprimir arboles\n";
-			cout << "2. Altura de cada arbol\n";
-			cout << "3. Nodos hojas de cada arbol\n";
-			cout << "4. Verificar si cada arbol esta equilibrado o no\n";
-			cout << "5. Salir\n\n";
-		
+	do 
+	{
+		do 
+		{
+			imprimirEncabezado("ascii-header.txt");
+			cout << "1. Imprimir arboles.\n";
+			cout << "2. Altura de cada arbol.\n";
+			cout << "3. Nodos hojas de cada arbol.\n";
+			cout << "4. Verificar si cada arbol esta equilibrado.\n";
+			cout << "5. Salir.\n\n";
 			cout << "Selecciona una opcion: ";
 			fflush(stdin);
-			cin >> opcion;
+			cin >> opcionMenu;
 		
-			if(opcion < 0 || opcion > 5){
-				titulo("ERROR");
+			if(opcionMenu <= 0 || opcionMenu > 5)
+			{
+				system("cls");
 				cout << "Por favor introduce una opcion valida.\n\n";
 				system("pause");
 			}
-		} while (opcion < 0 || opcion > 5);	
+		} 
+		while (opcionMenu <= 0 || opcionMenu > 5);	
 		
-		if (opcion == 1 ){
+		if (opcionMenu == 1 )
+		{
 			arbolesBinariosDeBusqueda.imprimirArboles();
-		} else if (opcion == 2) {
+		} 
+		else if (opcionMenu == 2) 
+		{
 			arbolesBinariosDeBusqueda.imprimirAlturaArboles();
-		} else if (opcion == 3) {
+		} 
+		else if (opcionMenu == 3) 
+		{
 			arbolesBinariosDeBusqueda.imprimirHojasArboles();
-		} else if (opcion == 4) {
+		} 
+		else if (opcionMenu == 4) 
+		{
 			arbolesBinariosDeBusqueda.imprimirEquilibrioArboles();
 		}
 		
-	} while (opcion != 5);
+	} 
+	while (opcionMenu != 5);
+	system("cls");
+	imprimirEncabezado("ascii-farewell.txt");
 }
 
-void titulo (char titulo[30]){
+void imprimirEncabezado(char* dirArchivo)
+{
 	system("cls");
-	cout << "********** " << titulo << "**********\n\n";
+	ifstream archivo(dirArchivo);
+	string linea;
+	while(getline(archivo, linea))
+	{
+		cout << linea << endl;
+	}
+	archivo.close();
+	cout << "\n\n";	                                                                                            
 }
